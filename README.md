@@ -1,3 +1,4 @@
+
 # SQL-Server-DTU-Calculation
 This article is to show you how to use a PowerShell script to collect data from VM that hosts SQL server and then estimate the DTU (Data Trans. Unit) needed if all the DBs running in Azure SQL DB.
 A popular web tool is provided by http://dtucalculator.azurewebsites.net/. In it, there is an executable (.exe) file and a PowerShell script that can collect data from a Windows server on it Microsoft SQL Server is running. The collected data are the following:
@@ -5,7 +6,9 @@ A popular web tool is provided by http://dtucalculator.azurewebsites.net/. In it
 Processor - % Processor Time Logical Disk
 
 Disk Reads/sec Logical Disk
+
 Disk Writes/sec Database
+
 Log Bytes Flushed/sec
 
 The PowerShell script collects 3600 datapoints in an interval of one second and writes the result to a CSV file. Then this file can upload the web site for calculation and visualization.
