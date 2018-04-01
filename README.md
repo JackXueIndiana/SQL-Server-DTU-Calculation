@@ -12,6 +12,8 @@ Log Bytes Flushed/sec
 
 The PowerShell script collects 3600 datapoints in an interval of one second and writes the result to a CSV file. Then this file can be uploaded to the web site with the info on how many core the server has for calculation of the DTU needed and visualization.
 
-Sometimes, one may have difficulty to collect the data for SQLServer:Databases(_Total)\Log Bytes Flushed. To overcome this problem, we can skip this one and put a fixed value in the position, say 0, which is the case that there is no activity on the SQL Server.
+Sometimes, one may have difficulty to collect the data for SQLServer:Databases(_Total)\Log Bytes Flushed. To overcome this problem, we can skip this one and put a fixed value in the position, say 0, which is the case that there is no activity on the SQL Server. Or we can set this value to 480000 to reflect the upper limit per this article:
+https://blogs.msdn.microsoft.com/sqlcat/2013/09/10/diagnosing-transaction-log-performance-issues-and-limits-of-the-log-manager/
+
 
 
