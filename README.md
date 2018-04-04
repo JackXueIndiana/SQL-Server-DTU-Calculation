@@ -15,5 +15,5 @@ The PowerShell script collects 3600 datapoints in an interval of one second and 
 Sometimes, one may have difficulty to collect the data for SQLServer:Databases(_Total)\Log Bytes Flushed. To overcome this problem, we can skip this one and put a fixed value in the position, say 0, which is the case that there is no activity on the SQL Server. Or we can set this value to 480000 to reflect the upper limit per this article:
 https://blogs.msdn.microsoft.com/sqlcat/2013/09/10/diagnosing-transaction-log-performance-issues-and-limits-of-the-log-manager/
 
-
+Actually, we may not want to run the PowerShell on a prod server for a hour as it will negatively impact the performance. By fixing Log bytes flushed per sec with its lower bounder (0) and upper bounder (480000) in calculation, we can get the corresponded lower/upper bounders for a SQL server in use. These boundary situations are rare but give us good indications. For example, a Prod IaaS SQL server tells us it needs a P1 (lower bounder) to P3 (upper bounder) based these calculations, we may say, well in Dev we will use a S6 and in Prod we will start with a P2.
 
