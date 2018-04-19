@@ -41,5 +41,7 @@ $counters = @("\Processor(_Total)\% Processor Time",
 #, 
 #"\SQLServer:Databases(_Total)\Log Bytes Flushed/sec") 
 
+#\MSSQL`$Support\Databases(_Total)\Log Bytes Flushed/sec -- try this if your sql is a named instance, say MSSQL
+
 Get-Counter -Counter $counters -SampleInterval 1 -MaxSamples 10 | 
     Export-Counter -FileFormat csv -Path "C:\tmp\sql-perfmon-log.csv" -Force
